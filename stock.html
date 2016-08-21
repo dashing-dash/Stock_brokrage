@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stock exchange</title>
+	 <script src="js/jquery.min.js"></script>
+	 <script src="js/jquery.table2excel.min.js"></script>
+	 <script type="text/javascript" src="js/moment.js"></script>
+	 <script type="text/javascript" src="js/lot.js"></script>
+	 <script type="text/javascript" src="js/jquery.export.min.js" ></script>
+	 <script type="text/javascript" src="js/jquery.calc.min.js"></script>
+	 <script type="text/javascript" src="js/tableexport.min.js"></script>
+	 <script type="text/javascript" src="js/table2CSV.js"></script>
+	 <script type="text/javascript" src="js/autocomplete.min.js"></script>
+	
+	<!--  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+	 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	 <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+	 <link rel="stylesheet" href="js/jquery-ui.css">
+	 <link rel="stylesheet" href="js/bootstrap.css">
+	 
+	 <style>
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+
+
+}
+	
+
+th, td {
+    text-align: center;
+    padding: 1px;
+
+
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+} 
+
+</style>
+
+
+</head>
+<body>
+<div style="overflow-x:auto;overflow:auto;height:445px;">
+
+	<table class="stock " id="stock" >
+	<tbody>
+	
+    	
+		<tr>
+			<th><center>Date</center></th>
+			<th><center>Name</center></th>
+			<th><center>Expiry</center></th>
+			<th><center>LOT</center></th>
+			<th><center>quantity</center></th>
+			<th><center>rate</center></th>
+			<th><center>net_rate</center></th>
+			<th><center>brok</center></th>
+			<th><center>amount</center></th>
+			<th><center>amount net rate</center></th>
+			<th><center>Brokrage amount</center></th>
+			<th><center>Net Shares</center></th>
+			<th><center>Outstanding</center></th>		
+		</tr>
+		
+		<tr class="cls1">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+			</tr>
+		<tr class="cls2">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls3">
+		<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls4">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+			
+		</tr>
+		<tr class="cls5">
+		<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+		<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+		<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		<tr class="cls5">
+			<td><input type="text" name="" onblur="stock()" class="classa"></td>
+			<td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td>
+			<td><input type="text" name="" onblur="stock()" class="classc"></td>
+			<td><input type="text" name="" onblur="stock()" class="classd"></td>
+			<td><input type="text" name="" onblur="stock()" class="classe"></td>
+			<td><input type="text" name="" onblur="stock()" class="classf"></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>
+			<td><input type="text" name=""></td>	
+			<!--<td><input type="text" name="" onkeypress="addRow(); stock()" class="clsclose"></td>-->
+		</tr>
+		</tbody>
+		</table>
+		</div>
+
+		<center><a href="#" id="test" onclick="javascript:fnExcelReport(); ">DOWNLOAD</a></center>
+
+
+
+		<br><br>
+
+<script type="text/javascript">
+/*$('input').keydown(function (e) {
+     if (e.which === 13) {
+         var index = $('input').index(this) + 1;
+         $('input').eq(index).focus();
+     }
+ });*/
+
+
+
+ $('input').keydown(function (e) {
+     if (e.which == 13) {
+         var index = $('input').index(this) +13;
+         $('input').eq(index).focus();
+     }
+     if (e.which == 38) {
+         var index = $('input').index(this) -13;
+         $('input').eq(index).focus();
+     }
+     /*if (e.which == 40) {
+         var index = $('input').index(this) +6;
+         $('input').eq(index).focus();
+     }*/
+     if (e.which == 39) {
+         var index = $('input').index(this) +1;
+         $('input').eq(index).focus();
+     }
+     if (e.which == 37) {
+         var index = $('input').index(this) -1;
+         $('input').eq(index).focus();
+     }
+ });
+ /*$('input').keydown(function(e) {
+    console.log(this);
+    if (e.which == 13) {
+        $(this).closest('tr').next().find('input.serial').focus();
+        e.preventDefault();
+    }
+});*/
+
+$( function() {
+    var availableTags = [
+      "DLF",
+      "SUN",
+      "MAHINDRA",
+      "BAJAJ",
+      "TATA",
+      "BLUE",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( ".classb" ).autocomplete({
+      source: availableTags
+      //autoSelectFirst: true
+    });
+});
+
+$(function () {
+    $("#upload").bind("click", function () {
+            if (typeof (FileReader) != "undefined") {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var table = $("<table />");
+                    var rows = e.target.result.split("\n");
+                    for (var i = 1; i < rows.length; i++) {
+                        var row = $("<tr />");
+                        var cells = rows[i].split(",");
+                        for (var j = 0; j < cells.length; j++) {
+                            var cell = $("<td />");
+                            cell.html(cells[j]);
+                            row.append(cell);
+
+                        }
+                        table.append(row);
+
+                        // Manual Code Start
+                        var new_row = row[0].innerHTML;
+                        var new_td = new_row.split("</td>");
+
+                        for (var k = 0; k < 5; k++) {
+                        	var val = new_td[k].replace("<td>","");
+                        	val = val.replace('"','');
+                        	val = val.replace('"','');
+                        	$(".stock tr:nth-child("+(i+1)+") td:nth-child("+(k+1)+") input").val(val);
+                        	$(".stock tr:nth-child("+(i+1)+") td:nth-child("+(k+1)+") input").prop( "disabled", true );               	
+                        }
+
+                       for ( k = 5; k < 8; k++) {
+                        	val = new_td[k].replace("<td>","");
+                        	val = val.replace('"','');
+                        	val = val.replace('"','');
+                        	$(".stock tr:nth-child("+(i+1)+") td:nth-child("+(k+1)+")").text(val);
+                        }	
+                        	var num=9;
+                        	val = new_td[8].replace("<td>","");
+                        	val = val.replace('"','');
+                        	val = val.replace('"','');
+                        	$(".stock tr:nth-child("+(i+1)+") td:nth-child("+(num)+") input").val(val);	
+                        	$(".stock tr:nth-child("+(i+1)+") td:nth-child("+(num)+") input").prop( "disabled", true );
+
+                        for ( k = 9; k < new_td.length; k++) {
+                        	val = new_td[k].replace("<td>","");
+                        	val = val.replace('"','');
+                        	val = val.replace('"','');
+                        	$(".stock tr:nth-child("+(i+1)+") td:nth-child("+(k+1)+")").text(val);
+                        }
+                        $('.stock tr:last').after('<tr class="cls5"><td><input type="text" name="" onblur="stock()" class="classa"></td><td><input type="text" name="" onblur="stock()" class="classb" id="tags"></td><td><input type="text" name="" onblur="stock()" class="classc"></td><td><input type="text" name="" onblur="stock()" class="classd"></td><td><input type="text" name="" onblur="stock()" class="classe"></td><td><input type="text" name="" onblur="stock()" class="classf"></td><td><input type="text" name=""></td><td><input type="text" name=""></td><td><input type="text" name=""></td><td><input type="text" name=""></td><td><input type="text" name=""></td><td><input type="text" name=""></td><td><input type="text" name=""></td></tr>');
+
+                        $(".stock tr:nth-child("+(i+2)+") td:nth-child("+(num-6)+") input").prop( "disabled", true );
+                        $(".stock tr:nth-child("+(i+2)+") td:nth-child("+(num-5)+") input").prop( "disabled", true );
+                        $(".stock tr:nth-child("+(i+2)+") td:nth-child("+(num-4)+") input").prop( "disabled", true );
+                        $(".stock tr:nth-child("+(i+2)+") td:nth-child("+(num)+") input").prop( "disabled", true );
+                        $(".stock tr:nth-child("+(i+2)+") td:nth-child("+(num+10)+") input").prop( "disabled", true );
+                    
+                        console.log(new_td);
+                    }
+                    
+                    $("#dvCSV").html('');
+                    $("#dvCSV").append(table);
+                }
+               reader.readAsText($("#fileUpload")[0].files[0]);
+            } else {
+                alert("This browser does not support HTML5.");
+            }
+    });
+});
+</script>
+<input type="file" id="fileUpload" />
+<input type="button" id="upload" value="Upload" />
+<hr />
+<div id="dvCSV">
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			Script:<input type="text" name="" class="classb" id="showall">
+		</div>
+		<div class="col-md-4">
+			closing:<input type="text" name="" class="closingval">
+		</div>
+		<div class="col-md-4">
+			<button onclick="showentry()">SHOW</button>
+		</div>
+	</div>
+</div>
+<div style="overflow-x:auto;overflow:auto;height:300px;">
+	<table class="stock1" id="stock1">
+	<tbody>
+	
+		<tr>
+			<th><center>Date</center></th>
+			<th><center>Name</center></th>
+			<th><center>Expiry</center></th>
+			<th><center>LOT</center></th>
+			<th><center>qantity</center></th>
+			<th><center>rate</center></th>
+			<th><center>net_rate</center></th>
+			<th><center>brok</center></th>
+			<th><center>amount</center></th>
+			<th><center>amount net rate</center></th>
+			<th><center>Brokrage amount</center></th>
+			<th><center>Net Shares</center></th>
+			<th><center>Outstanding</center></th>
+			
+			
+		</tr>
+		
+	</tbody>
+	</table>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>	
+
+
